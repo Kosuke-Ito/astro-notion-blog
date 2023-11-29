@@ -1,4 +1,4 @@
-English | [日本語](README.ja.md)
+日本語 | [English](README.en.md)
 
 # astro-notion-blog
 
@@ -8,108 +8,115 @@ English | [日本語](README.ja.md)
 
 <img src="https://user-images.githubusercontent.com/1063435/213838069-c9654c32-ec9b-4e82-a3b5-2acbd665b16a.png" width="480">
 
-astro-notion-blog enables you to create a blog using [Notion](https://www.notion.so/) and generates it statically, resulting in lightning-fast page views.
+astro-notion-blog を使えば [Notion](https://www.notion.so) で書けるブログを作ることができます。  
+ブログは [Astro](https://astro.build/) を使って静的生成されるので非常に高速です。
 
-- :rocket: **Blazing fast** page views
-- :pencil: With the ability to write blog content in **Notion**
-- :hammer_and_wrench: **Customize** your site's appearance to your liking
-- :white_check_mark: Take advantage of **the official Notion APIs**
+- :rocket: ページの表示が**爆速**
+- :pencil: **Notion で**ブログが書ける
+- :hammer_and_wrench: ブログの見た目を**自由にカスタマイズ可能**
+- :white_check_mark: **Notion 公式 API**を使っているため安心
 
-## :camera_flash: Screenshots
+## :camera_flash: スクリーンショット
 
 ### PC
 
 <img src="https://github.com/otoyo/astro-notion-blog/assets/1063435/967bbc23-014c-427d-b6cd-02c41822fb45" width="600">
 
-### Smartphone
+### スマートフォン
 
 <img src="https://github.com/otoyo/astro-notion-blog/assets/1063435/bf1add06-1f1c-42ca-88c9-decb8c0dcf8f" width="300">
 
-## :globe_with_meridians: Demo
+## :globe_with_meridians: デモ
 
 [https://astro-notion-blog.pages.dev](https://astro-notion-blog.pages.dev)
 
-## :motor_scooter: Quick Start
+## :motor_scooter: クイックスタート
 
-### Requirements
+### 必要なもの
 
 - [Notion](https://www.notion.so/)
 - [Cloudflare Pages](https://pages.cloudflare.com/)
-- Git
 
-### Steps
+### ステップ
 
-1. If you enjoy using this repo, **don't forget to give it a star!** :wink:
-   - This is very motivating!
-2. Simply duplicate [the blog template](https://otoyo.notion.site/e2c5fa2e8660452988d6137ba57fd974?v=abe305cd8b3d467285e91a2a85f4d8de) into your Notion workspace.
-3. Once you've duplicated the page (database), customize it to your liking by changing the icon, title, and description.
+1. このリポジトリを**スターします** :wink:
+   - スターしていただけると開発の励みになります
+2. [ブログテンプレート](https://otoyo.notion.site/e2c5fa2e8660452988d6137ba57fd974?v=abe305cd8b3d467285e91a2a85f4d8de) を自分の Notion へ複製します
+3. 複製したページ(データベース)のアイコン、タイトル、説明を変更します
 
-<img src="https://user-images.githubusercontent.com/1063435/223611374-86d7172c-9cda-477b-b8a3-dc724fa7ccf4.png" width="600">
+<img src="https://user-images.githubusercontent.com/1063435/223611473-09e87aba-ad3b-4380-a74f-58c3c5804c39.png" width="600">
 
-4. For future reference, identify the `DATABASE_ID` by noting the portion of the duplicated page (database) URL that appears as https://notion.so/your-account/<HERE>?v=xxxx.
+4. 複製したページ(データベース)の URL `https://notion.so/your-account/<ここ>?v=xxxx` を `DATABASE_ID` としてメモします
 
 <img src="https://user-images.githubusercontent.com/1063435/213966685-3a2afed2-45c0-4ea5-8070-e634d8d648de.png" width="260">
 
-<img src="https://user-images.githubusercontent.com/1063435/213966888-c3f1f741-62ac-42f3-9af2-94ab375b5676.png" width="600">
+<img src="https://user-images.githubusercontent.com/1063435/213966934-4442ce75-f88e-465f-b4f4-545d46b8eec9.png" width="600">
 
-5. [Create an integration](https://developers.notion.com/docs/create-a-notion-integration#step-1-create-an-integration) and note "Internal Integration Token" as `NOTION_API_SECRET`
-6. To integrate your application with Notion, [share a database with your integration](https://developers.notion.com/docs/create-a-notion-integration#step-2-share-a-database-with-your-integration).
-7. To make a copy of this repository in your own account, fork it by clicking on the 'Fork' button in the top-right corner of the repository page.
-8. Go to [Cloudflare Pages](https://pages.cloudflare.com/) and sign in
-9. Create new project with "Connect to Git" with your forked repository `<your-account>/astro-notion-blog`, then click "Begin setup"
-10. In "Build settings" section,
-    1. Select "Astro" as "Framework preset"
-    2. Open "Environment Variables (advanced)" and set `NODE_VERSION`, `NOTION_API_SECRET` and `DATABASE_ID`
-       - `NODE_VERSION` is `v18.16.0` or higher
-       - [How to deploy a site with Git](https://docs.astro.build/en/guides/deploy/cloudflare/#how-to-deploy-a-site-with-git) is helpful
+5. [Create an integration](https://developers.notion.com/docs/create-a-notion-integration#step-1-create-an-integration) からインテグレーションを作成し "Internal Integration Token" を `NOTION_API_SECRET` としてメモします
+6. 複製したページを再度開き [Share a database with your integration](https://developers.notion.com/docs/create-a-notion-integration#step-2-share-a-database-with-your-integration) の手順でインテグレーションにデータベースを共有します
+7. このリポジトリを自分のアカウントヘフォークします
+   - フォークボタンは画面上部右側のスターの左にあります
+8. [Cloudflare Pages](https://pages.cloudflare.com/) を開きサインインします
+   - 言語設定を日本語に変更します
 
-<img src="https://user-images.githubusercontent.com/1063435/213967061-06f488fe-0b42-40a5-8f19-ac441f0168ff.png" width="400">
+<img src="https://user-images.githubusercontent.com/1063435/213967607-338b8728-d7c9-47e4-8192-e955e3f4ce30.png" width="220">
 
-<img src="https://github.com/otoyo/astro-notion-blog/assets/1063435/bc1ceef1-d67a-490b-b465-34af1b0f8010" width="600">
+9. プロジェクトを "Connect to Git" を選んで作成し、先ほどフォークした `<your-account>/astro-notion-blog` リポジトリを選んで "Begin setup" をクリックします
+10. 「ビルドの設定」で、
+    1. 「フレームワーク プリセット」で Astro を選択します
+    2. 「環境変数(アドバンスド)」 を開き `NODE_VERSION`, `NOTION_API_SECRET`, `DATABASE_ID` の 3 つを設定します
+       - `NODE_VERSION` は `v18.16.0` かそれ以上を指定します
+       - 詳しくは [How to deploy a site with Git](https://docs.astro.build/en/guides/deploy/cloudflare/#how-to-deploy-a-site-with-git) をご覧ください
 
-11. After clicking the 'Save and Deploy' button, your Notion Blog will be published once the deployment process is complete.
+<img src="https://user-images.githubusercontent.com/1063435/213967111-72ea2ad1-ad3b-4629-8b65-7b25bc6ddb31.png" width="400">
 
-Please note that the astro-notion-blog requires manual deployment every time you publish a new post or make updates. You can deploy manually from the Cloudflare Pages dashboard or set up a scheduled deploy using CI tools such as GitHub Actions.
+<img src="https://github.com/otoyo/astro-notion-blog/assets/1063435/17ecdc09-c0f8-4332-8b87-04f4b2ffafce" width="600">
 
-## :hammer_and_pick: How to customize
+11. "Save and Deploy" をクリックし、デプロイが完了すると Notion Blog が見えるようになります
 
-### Additional requirements
+astro-notion-blog では新しい記事や変更を公開したいとき毎回デプロイが必要になります。  
+Cloudflare Pages のダッシュボードから手動でデプロイするか、GitHub Action のような CI を使って定時デプロイしてください。
 
-- Node.js v18.14.1 or higher
+## :hammer_and_pick: カスタマイズするには
 
-### Steps
+### 追加の必要要件
 
-1. To set your secrets as environment variables, run the following commands in your terminal:
+- Node.js v18.14.1 かそれ以上
+- Git
+
+### ステップ
+
+1. 下記コマンドを実行して秘密情報を環境変数に設定します
 
 ```sh
 export NOTION_API_SECRET=<YOUR_NOTION_API_SECRET>
 export DATABASE_ID=<YOUR_DATABASE_ID>
 ```
 
-2. Install dependencies and start local server
+2. 依存関係をインストールしローカルサーバーを起動します
 
 ```sh
 npm install
 npm run dev
 ```
 
-3. Open [http://localhost:4321](http://localhost:4321) in your browser
-4. Press `Ctrl+C` in the terminal to stop
+3. ブラウザで [http://localhost:4321](http://localhost:4321) を開きます
+4. 開発サーバーを停止するにはターミナルで `Ctrl+C` を押します。
 
-### For more information
+### その他の情報
 
-See [wiki](https://github.com/otoyo/astro-notion-blog/wiki).
+[wiki](https://github.com/otoyo/astro-notion-blog/wiki) をご覧ください。
 
-## :lady_beetle: Bug reports & feature requests
+## :lady_beetle: バグ報告 & 機能要望
 
-To report an issue, please create a new Issue. You can use **either English or Japanese** to describe the issue. :wink:
+Issue を作成してください。日本語で大丈夫です。
 
-## :two_hearts: Sponsorship
+## :two_hearts: スポンサー
 
-If you like astro-notion-blog, sponsor me so that I can keep on developing software. Thank you.
+astro-notion-blog を気に入っていただけましたら、ソフトウェアの開発を継続できるようにスポンサーになることを検討してください。
 
 [![GitHub sponsors](https://img.shields.io/static/v1?label=Sponsor&message=%E2%9D%A4&logo=GitHub&color=%23fe8e86)](https://github.com/sponsors/otoyo)
 
 ---
 
-astro-notion-blog is based [otoyo/notion-blog](https://github.com/otoyo/notion-blog)
+astro-notion-blog は [otoyo/notion-blog](https://github.com/otoyo/notion-blog) をベースにしています。
