@@ -31,6 +31,7 @@ const [posts, rankedPosts, tags, numberOfPages] = await Promise.all([
     {
       posts.length === 0 ? (
         <NoContents contents={posts} />
+        <hr />
       ) : (
         posts.map((post) => (
           <div class={styles.post} key={post.Slug}>
@@ -40,6 +41,7 @@ const [posts, rankedPosts, tags, numberOfPages] = await Promise.all([
             <PostFeaturedImage post={post} />
             <PostExcerpt post={post} />
             <ReadMoreLink post={post} />
+            <hr />
           </div>
         ))
       )
@@ -54,3 +56,11 @@ const [posts, rankedPosts, tags, numberOfPages] = await Promise.all([
     <BlogTagsLink heading="Categories" tags={tags} />
   </div>
 </Layout>
+
+<style>
+  hr {
+    margin-top: 20px;
+    border: 0;
+    border-top: 1px solid #ddd;
+  }
+</style>
